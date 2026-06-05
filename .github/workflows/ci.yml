@@ -23,30 +23,26 @@ jobs:
 
       - name: Run tests
         run: npx jest
-
   deploy:
-    name: Deploy via SSH (SCP)
     runs-on: ubuntu-latest
     needs: ci
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Deploy files using SCP
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          password: ${{ secrets.SSH_PASSWORD }}
-          source: "."
-          target: "/home/kachi.vudse26.cloud/public_html"
-
-      - name: Fix permissions + cleanup
+      - name: Deploy using SSH (server pull method)
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
-            chmod -R 755 /home/kachi.vudse26.cloud/public_html
+            echo "Cleaning web directory..."
+            rm -rf /home/kachi.vudse26.cloud/public_html/*
+
+            echo "Pulling latest code from GitHub..."
+            cd /home/kachi.vudse26.cloud/public_html
+
+            git init
+            git remote add origin https://github.com/OkekeKachi/ci-cd-pipeline-calculator.git
+            git pull origin main
