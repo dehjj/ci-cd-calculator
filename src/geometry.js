@@ -50,3 +50,5 @@ function calculateShape(shape, v1, v2) {
 }
 
 module.exports = { calculateShape };
+
+//testing the geometry calculator with Jest in geometry.test.js
