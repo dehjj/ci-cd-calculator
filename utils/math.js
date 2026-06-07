@@ -48,7 +48,7 @@ if (typeof module !== "undefined") {
 }
 
 /* =========================
-   EXPOSE FOR BROWSER
+   EXPOSE FOR BROWSER.
 ========================= */
 if (typeof window !== "undefined") {
   window.MathLib = {
