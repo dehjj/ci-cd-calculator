@@ -13,6 +13,10 @@ function multiply(a, b) {
 function divide(a, b) {
   return a / b;
 }
+
+function exp(){
+  return (Math.exp);
+}
 // Additional math functions can be added here as needed.
 
 /* =========================
@@ -24,6 +28,7 @@ if (typeof module !== "undefined") {
     subtract,
     multiply,
     divide,
+    exp,
     
   };
 }
@@ -37,6 +42,7 @@ if (typeof window !== "undefined") {
     subtract,
     multiply,
     divide,
+    exp,
    
   };
 }

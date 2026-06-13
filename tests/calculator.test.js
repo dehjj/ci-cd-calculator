@@ -3,10 +3,7 @@ const {
   subtract,
   multiply,
   divide,
-  squareArea,
-  rectangleArea,
-  circleArea,
-  cubeVolume
+  exp
 } = require("../assets/js/math");
 
 describe("Basic Calculator Functions", () => {
@@ -27,5 +24,11 @@ describe("Basic Calculator Functions", () => {
     expect(divide(10, 2)).toBe(5);
   });
 
+});
+
+describe("eulers number", () =>{
+  test('returns Euler number', () => {
+  expect(Math.E).toBeCloseTo(2.718281828459045, 10);
+});
 });
 

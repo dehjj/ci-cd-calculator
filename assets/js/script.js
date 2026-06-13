@@ -60,6 +60,15 @@ function appendToResult(value) {
   updateResult();
 }
 
+function calculate() {
+  let expression = display.value;
+
+  expression = expression.replace(/e/g, Math.E);
+
+  const result = eval(expression);
+  display.value = result;
+}
+
 function bracketToResult(value) {
   currentExpression += value;
   updateResult();
