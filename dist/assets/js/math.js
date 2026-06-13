@@ -14,22 +14,10 @@ function divide(a, b) {
   return a / b;
 }
 
-// Geometry
-function squareArea(s) {
-  return multiply(s, s);
+function exp(){
+  return (Math.exp);
 }
-
-function rectangleArea(l, w) {
-  return multiply(l, w);
-}
-
-function circleArea(r) {
-  return multiply(Math.PI, multiply(r, r));
-}
-
-function cubeVolume(s) {
-  return Math.pow(s, 3);
-}
+// Additional math functions can be added here as needed.
 
 /* =========================
    EXPORT FOR JEST (Node)
@@ -40,10 +28,8 @@ if (typeof module !== "undefined") {
     subtract,
     multiply,
     divide,
-    squareArea,
-    rectangleArea,
-    circleArea,
-    cubeVolume
+    exp,
+    
   };
 }
 
@@ -56,9 +42,7 @@ if (typeof window !== "undefined") {
     subtract,
     multiply,
     divide,
-    squareArea,
-    rectangleArea,
-    circleArea,
-    cubeVolume
+    exp,
+   
   };
 }
