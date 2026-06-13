@@ -164,6 +164,7 @@ function calculateExpression(expression) {
     return "Error";
   }
 }
+// ------------------------------
 function calculateResult() {
   if (!currentExpression) return;
   const display = document.getElementById("result");
